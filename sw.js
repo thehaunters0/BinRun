@@ -1,5 +1,5 @@
-const CACHE = 'binrun-shell-v11';
-const FILES = ['./', './index.html', './manifest.webmanifest', './backend-config.js', './icon-192.png', './icon-512.png'];
+const CACHE = 'binrun-shell-v13';
+const FILES = ['./', './index.html', './manifest.webmanifest', './backend-config.js', './icon-192.png', './icon-512.png', './sms-terms.html', './sms-privacy.html'];
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES))));
 self.addEventListener('activate', event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith('binrun-shell-') && key !== CACHE).map(key => caches.delete(key))))));
 self.addEventListener('fetch', event => {
